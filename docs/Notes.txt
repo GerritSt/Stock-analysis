@@ -1,0 +1,24 @@
+Simply Wall st:
+
+Have access to the pro api
+Token:
+sws:YzVlNGI5M2YtY2JhMi00MzhhLThjMGQtYWRjZThmYTAxN2QxOjI1ZjY0MDNmM2I2NDJlNTA=
+
+*How to get fundamentals:*
+http://theautomatic.net/2020/05/05/how-to-download-fundamentals-data-with-python/
+
+registered through google account
+
+Get UUID of a company:
+
+curl --location 'https://api.simplywall.st/graphql' \
+--header 'Authorization: Bearer <pro-api-token>' \
+--header 'Content-Type: application/json' \
+--data '{"query":"query searchCompanies($query: String!) {searchCompanies(query: $query) {id,name,exchangeSymbol,tickerSymbol}}","variables":{"query":"tesla"}}'
+
+Get basic company information using UUID (company id):
+
+curl --location 'https://api.simplywall.st/graphql' \
+--header 'Authorization: Bearer <pro-api-token>' \
+--header 'Content-Type: application/json' \
+--data '{"query":"query Query($id: ID!) {company (id: $id) {id,name,tickerSymbol}}","variables":{"id":"65dce5ea-70d6-417f-9cac-1eaa92fb7f1c"}}'

@@ -1,0 +1,7 @@
+{
+    "editor.quickSuggestions": {
+        "other": "inline"
+    },
+    "editor.snippetSuggestions": "bottom",
+    "editor.inlineSuggest.enabled": false
+}
